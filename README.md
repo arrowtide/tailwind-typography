@@ -26,10 +26,33 @@ You can check out [the demo here.](https://play.tailwindcss.com/1xXD1zTqcC?file=
 
 ---
 
-## Other stuff
+## Changes
 
-### `.prose` no longer has a container
+### `.prose` no longer has a container by default
 Use the `.prose-container` class for that. 
 
 ### `.prose-invert` doesn't work
-Havn't built a tailwind only dark theme yet. But it's coming. 
+Havn't built a tailwind only dark theme yet. But it's coming. It's really easy to make one yourself in the meantime:
+
+```css
+.dark:root {
+  --prose-color: var(--color-slate-500);
+  ...
+  ...
+}
+```
+
+### `.lead` is no longer a thing
+You can easily add this back in though:
+
+```css
+.prose :where(.lead):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: var(--prose-lead-color);
+    font-size: var(--prose-lead-size);
+    margin-top: var(--prose-lead--margin-top);
+    margin-bottom: var(--prose-lead-margin-bottom);
+    line-height: var(--prose-lead-leading);
+    letter-spacing: var(--prose-lead-tracking);
+}
+```
+
