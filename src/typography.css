@@ -10,6 +10,8 @@
 
   --prose-p-margin-top: calc(var(--spacing) * 5);
   --prose-p-margin-bottom: calc(var(--spacing) * 5);
+  --prose-p-leading: var(--prose-leading);
+  --prose-p-tracking: var(--prose-tracking);
 
   --prose-strong-weight: 600;
   --prose-strong-color: var(--color-slate-800);
